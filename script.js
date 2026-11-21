@@ -18,6 +18,6 @@ let numOne;
 let operand;
 let numTwo;
 
-function operate(numOne, numTwo) {
-    return add(numOne, numTwo);
+function operate(numOne, numTwo, func) {
+    return func(numOne, numTwo)
 }
