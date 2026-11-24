@@ -37,7 +37,7 @@ function operate(numOne, numTwo, operator) {
       being clicked from the html buttons
 
       step 1: On click of a button
-      step 2: If this is the first click and the operator is yet t be clicked, 
+      step 2: If this is the first click and the operator is yet to be clicked, 
       assign it to the numOne variable
       step 3: if the number is clicked and the operator has been clicked then 
       assign it the second operand variable i.e. numTwo
@@ -53,11 +53,12 @@ function operate(numOne, numTwo, operator) {
     
     // screen.appendChild(content);
 
+
+    function updateVariable(e) {
+        numOne = e.target.textContent;
+        console.log(numOne);
+        return numOne;
+    }
     // get all the button that is a number from the calculator
-    const numbers = document.querySelectorAll('.number');
-    numbers.forEach( () => {
-        addEventListener('click', function() {
-            alert(numbers.textContent);
-        })
-    });
-// }
+    const numberBtn = document.querySelectorAll('.number');
+    numberBtn.forEach( (btn) => addEventListener('click', updateVariable))
