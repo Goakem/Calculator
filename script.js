@@ -30,7 +30,7 @@ function operate(numOne, numTwo, operator) {
     }
 }
 
-function updateOperation(numOne, numTwo, operator){
+// function updateOperation(numOne){
     /*
       What this function does is to take an operand 
       i.e. numOne and assigns it the value that is 
@@ -43,12 +43,21 @@ function updateOperation(numOne, numTwo, operator){
       assign it the second operand variable i.e. numTwo
     */
 
-    /* Upon reading it a second time I believe it is to update the first variable 
-    i.e. numOne is equal to the numbers clicked from the html buttons */
-    const screen = document.querySelector(".display");
-    console.log(calculatorScreen);
-    const content = document.createElement("div");
-    content.classList.add("content");
-    screen.appendChild(content);
+    // /* Upon reading it a second time I believe it is to update the first variable 
+    // i.e. numOne is equal to the numbers clicked from the html buttons */
+    // const screen = document.querySelector(".display");
+    // console.log(screen);
+    // const content = document.createElement("div");
+    // content.classList.add("content");
+    // content.textContent = numbers;
+    
+    // screen.appendChild(content);
 
-}
+    // get all the button that is a number from the calculator
+    const numbers = document.querySelectorAll('.number');
+    numbers.forEach( () => {
+        addEventListener('click', function() {
+            alert(numbers.textContent);
+        })
+    });
+// }
