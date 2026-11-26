@@ -14,9 +14,9 @@ function divide(a, b) {
     return a / b;
 }
 
-let numOne = 0;
-let operand;
-let numTwo;
+let numOne = '';
+let numTwo = '';
+let operand = '';
 
 function operate(numOne, numTwo, operator) {
     if (func === '+') {
@@ -44,5 +44,3 @@ function operate(numOne, numTwo, operator) {
     });
     const screenContent = document.createElement('div');
     screenContent.classList.add('.content');
-
-    
