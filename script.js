@@ -14,7 +14,7 @@ function divide(a, b) {
     return a / b;
 }
 
-let numOne;
+let numOne = 0;
 let operand;
 let numTwo;
 
@@ -55,10 +55,19 @@ function operate(numOne, numTwo, operator) {
 
 
     function updateVariable(e) {
-        numOne = e.target.textContent;
+        numOne += e.target.textContent;
         console.log(numOne);
-        return numOne;
+        screenContent.textContent = Number(numOne);
+        screen.appendChild(screenContent);
+        return Number(numOne);
     }
     // get all the button that is a number from the calculator
     const numberBtn = document.querySelectorAll('.number');
-    numberBtn.forEach( (btn) => addEventListener('click', updateVariable))
+    const screen = document.querySelector('.display');
+    numberBtn.forEach( (btn) => {
+        btn.addEventListener('click', updateVariable)
+    });
+    const screenContent = document.createElement('div');
+    screenContent.classList.add('.content');
+
+    
