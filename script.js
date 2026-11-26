@@ -40,6 +40,8 @@ function operate(numOne, numTwo, operator) {
     const numberBtn = document.querySelectorAll('.number');
     const screen = document.querySelector('.display');
     const operatorBtn = document.querySelectorAll('.operator');
+    const equalSign = document.querySelector('.equator');
+
     numberBtn.forEach( (btn) => {
         btn.addEventListener('click', updateVariable)
     });
