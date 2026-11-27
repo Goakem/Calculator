@@ -31,21 +31,22 @@ function operate(numOne, numTwo, operator) {
 }
 
     function updateVariable(e) {
-        // numOne += e.target.textContent;
-        // console.log(numOne);
-        // screenContent.textContent = Number(numOne);
-        // screen.appendChild(screenContent);
-        // return Number(numOne);
+        numOne += e.target.textContent;
+        console.log(numOne);
+        screenContent.textContent = Number(numOne);
+        screen.appendChild(screenContent);
+        console.log(e);
+        return Number(numOne);
         /*If the click is before the click of any operator, then it should be registered as numOne
         else if the click is a digital button and an operator button has been clicked then numTwo 
         should be updated */
-        if (numberBtn  && !operatorBtn ) {
-            numOne += e.target.textContent;
-            screenContent.textContent = Number(numOne);
-            screen.appendChild(screenContent);
-            console.log("This is numOne", numOne);
-            return numOne;
-        }
+        // if (numberBtn  && !operatorBtn ) {
+        //     numOne += e.target.textContent;
+        //     screenContent.textContent = Number(numOne);
+        //     screen.appendChild(screenContent);
+        //     console.log("This is numOne", numOne);
+        //     return numOne;
+        // }
         // } else if ((e > 1) && operatorBtn) {
         //     numTwo += e.taget.textContent;
         //     screenContent.textContent = Number(numOne);
