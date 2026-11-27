@@ -19,13 +19,13 @@ let numTwo = '';
 let operator = '';
 
 function operate(numOne, numTwo, operator) {
-    if (func === '+') {
+    if (operator === '+') {
         return add(numOne, numTwo);
-    } else if (func === '-') {
+    } else if (operator === '-') {
         return subtract(numOne, numTwo);
-    } else if(func === '*'){
+    } else if(operator === '*'){
         return multiply(numOne, numTwo);
-    } else if(func === '/'){
+    } else if(operator === '/'){
         return divide(numOne, numTwo);
     }
 }
