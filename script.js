@@ -16,7 +16,7 @@ function divide(a, b) {
 
 let numOne = '';
 let numTwo = '';
-let operand = '';
+let operator = '';
 
 function operate(numOne, numTwo, operator) {
     if (func === '+') {
@@ -31,19 +31,43 @@ function operate(numOne, numTwo, operator) {
 }
 
     function updateVariable(e) {
-        numOne += e.target.textContent;
-        console.log(numOne);
-        screenContent.textContent = Number(numOne);
-        screen.appendChild(screenContent);
-        return Number(numOne);
+        // numOne += e.target.textContent;
+        // console.log(numOne);
+        // screenContent.textContent = Number(numOne);
+        // screen.appendChild(screenContent);
+        // return Number(numOne);
+        /*If the click is before the click of any operator, then it should be registered as numOne
+        else if the click is a digital button and an operator button has been clicked then numTwo 
+        should be updated */
+        if (numberBtn  && !operatorBtn ) {
+            numOne += e.target.textContent;
+            screenContent.textContent = Number(numOne);
+            screen.appendChild(screenContent);
+            console.log("This is numOne", numOne);
+            return numOne;
+        }
+        // } else if ((e > 1) && operatorBtn) {
+        //     numTwo += e.taget.textContent;
+        //     screenContent.textContent = Number(numOne);
+        //     screen.appendChild(screenContent);
+        //     console.log("This is numTwo", numTwo);
+        //     return numTwo;
+        // }
     }
     const numberBtn = document.querySelectorAll('.number');
     const screen = document.querySelector('.display');
     const operatorBtn = document.querySelectorAll('.operator');
     const equalSign = document.querySelector('.equator');
+    const screenContent = document.createElement('div');
+    screenContent.classList.add('.content');
 
     numberBtn.forEach( (btn) => {
         btn.addEventListener('click', updateVariable)
     });
-    const screenContent = document.createElement('div');
-    screenContent.classList.add('.content');
+    operatorBtn.forEach( (btn) => {
+        btn.addEventListener('click', function (e) {
+            operator = e.target.textContent;
+            console.log(operator);
+            return operator;
+        });
+    })
